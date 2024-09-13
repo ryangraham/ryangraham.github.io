@@ -16,3 +16,8 @@ alternately, run mkdocs gh-deploy to both run mkdocs build and push to gh-pages 
 Go to https://github.com/ryangraham/ryangraham.github.io/settings/pages and set Branch to gh-pages and folder to / (root)
 
 Now visit https://ryangraham.github.io/ to see the site
+
+----
+
+# These are needed by social plugin for image generation
+brew install cairo freetype libffi libjpeg libpng zlib
