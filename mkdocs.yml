@@ -1,4 +1,5 @@
 site_name: Ryan's Blog
+site_url: https://ryangraham.github.io
 theme:
   name: material
 
