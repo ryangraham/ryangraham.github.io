@@ -12,3 +12,7 @@ after that, edit mkdocs.yml, create firstpost.md, and run mkdocs serve
 then run mkdocs build
 
 alternately, run mkdocs gh-deploy to both run mkdocs build and push to gh-pages branch
+
+Go to https://github.com/ryangraham/ryangraham.github.io/settings/pages and set Branch to gh-pages and folder to / (root)
+
+Now visit https://ryangraham.github.io/ to see the site
