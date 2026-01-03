@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostList from "../../components/PostList.astro";
+import Pagination from "../../components/Pagination.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+  const pageSize = 6;
+  const total = Math.max(1, Math.ceil(posts.length / pageSize));
+  return Array.from({ length: total }, (_, i) => {
+    const page = i + 1;
+    return {
+      params: { page: String(page) },
+      props: {
+        page,
+        total,
+        posts: posts.slice((page - 1) * pageSize, page * pageSize),
+      },
+    };
+  });
+}
+
+const { page, total, posts } = Astro.props;
+---
+<BaseLayout title="Blog">
+  <section class="content">
+    <h1>Blog</h1>
+    <PostList posts={posts} />
+    <Pagination page={page} total={total} />
+  </section>
+</BaseLayout>

@@ -1,0 +1,10 @@
+---
+const { page, total } = Astro.props;
+const prev = page > 1 ? `/blog/${page - 1}/` : null;
+const next = page < total ? `/blog/${page + 1}/` : null;
+---
+<nav class="pagination">
+  {prev && <a href={prev}>Newer</a>}
+  <span>Page {page} of {total}</span>
+  {next && <a href={next}>Older</a>}
+</nav>
