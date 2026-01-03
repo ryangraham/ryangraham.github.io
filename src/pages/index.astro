@@ -9,9 +9,23 @@ const posts = (await getCollection("blog")).sort(
 const recent = posts.slice(0, 5);
 ---
 <BaseLayout title="Ryan Graham">
-  <section class="hero content">
-    <h1>Hi, I'm Ryan.</h1>
-    <p>Thoughts on building, learning, and living well.</p>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-media">
+        <img
+          class="hero-avatar"
+          src="/images/ryan.jpg"
+          alt="Portrait of Ryan Graham"
+          loading="eager"
+          width="120"
+          height="120"
+        />
+      </div>
+      <div class="hero-copy content">
+        <h1>Hi, I'm Ryan.</h1>
+        <p>Thoughts on building, learning, and living well.</p>
+      </div>
+    </div>
   </section>
   <section class="content">
     <h2>Recent posts</h2>
