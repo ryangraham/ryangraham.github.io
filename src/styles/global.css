@@ -154,3 +154,14 @@ a {
   padding: 24px 0;
   color: var(--muted);
 }
+
+.post-description {
+  display: inline-block;
+}
+
+.post-description hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #e7d9c8;
+  margin: 16px 0 0;
+}

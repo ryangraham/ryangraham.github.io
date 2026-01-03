@@ -6,7 +6,12 @@ const { title, description, date } = Astro.props;
   <article class="content">
     <p>{new Date(date).toLocaleDateString()}</p>
     <h1>{title}</h1>
-    {description && <p>{description}</p>}
+    {description && (
+      <div class="post-description">
+        <p>{description}</p>
+        <hr />
+      </div>
+    )}
     <slot />
   </article>
 </BaseLayout>
