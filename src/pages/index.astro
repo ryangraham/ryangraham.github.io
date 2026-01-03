@@ -4,31 +4,40 @@ import PostList from "../components/PostList.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 const recent = posts.slice(0, 5);
 ---
+
 <BaseLayout title="Ryan Graham">
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-media">
-        <img
-          class="hero-avatar"
-          src="/images/ryan.jpg"
-          alt="Portrait of Ryan Graham"
-          loading="eager"
-          width="120"
-          height="120"
-        />
-      </div>
-      <div class="hero-copy content">
-        <h1>Hi, I'm Ryan.</h1>
-        <p>Thoughts on building, learning, and living well.</p>
-      </div>
-    </div>
-  </section>
-  <section class="content">
-    <h2>Recent posts</h2>
-    <PostList posts={recent} />
-  </section>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-media">
+                <img
+                    class="hero-avatar"
+                    src="/images/ryan.jpg"
+                    alt="Portrait of Ryan Graham"
+                    loading="eager"
+                    width="120"
+                    height="120"
+                />
+            </div>
+            <div class="hero-copy content">
+                <h1>Hi, my name is Ryan.</h1>
+                <p>
+                    I'm an SRE 🛠️. I've worked at a million startups, a baby
+                    unicorn 🦄, and a few evil mega corps 🏢.
+                </p>
+                <p>I make my living with Terraform 🧱 & Kubernetes ☸️.</p>
+                <p>
+                    But I obsess over vibe engineering workflows 🎧 and my
+                    daughters' volleyball careers 🏐
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <h2>Recent posts</h2>
+        <PostList posts={recent} />
+    </section>
 </BaseLayout>

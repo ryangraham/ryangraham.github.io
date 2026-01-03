@@ -112,6 +112,7 @@ a {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: 50% 20%;
   border: 3px solid #f0ddc8;
   background: var(--card);
   box-shadow: 0 14px 30px rgba(58, 40, 28, 0.18);
